@@ -61,16 +61,43 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandHandlers.cs" />
-    <Compile Include="Domain.cs" />
+    <Compile Include="AggregateNotFoundException.cs" />
+    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="CheckInItemsToInventory.cs" />
+    <Compile Include="ConcurrencyException.cs" />
+    <Compile Include="CreateInventoryItem.cs" />
+    <Compile Include="DeactivateInventoryItem.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="ICommandSender.cs" />
+    <Compile Include="IEventPublisher.cs" />
+    <Compile Include="IEventStore.cs" />
+    <Compile Include="IHandles.cs" />
+    <Compile Include="InvenotryItemDetailView.cs" />
+    <Compile Include="InventoryCommandHandlers.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="EventStore.cs" />
     <Compile Include="FakeBus.cs" />
-    <Compile Include="InfrastructureCrap.DontBotherReadingItsNotImportant.cs" />
+    <Compile Include="DelegateAdjuster.DontBotherReadingItsNotImportant.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Commands.cs" />
-    <Compile Include="Events.cs" />
-    <Compile Include="Message.cs" />
-    <Compile Include="ReadModel.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="InventoryItem.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ItemsRemovedFromInventory.cs" />
+    <Compile Include="IMessage.cs" />
+    <Compile Include="InventoryItemCreated.cs" />
+    <Compile Include="InventoryItemDeactivated.cs" />
+    <Compile Include="InventoryItemDetailsDto.cs" />
+    <Compile Include="InventoryItemListDto.cs" />
+    <Compile Include="InventoryItemRenamed.cs" />
+    <Compile Include="InventoryListView.cs" />
+    <Compile Include="IReadModelFacade.cs" />
+    <Compile Include="BullShitDatabase.cs" />
+    <Compile Include="ItemsCheckedInToInventory.cs" />
+    <Compile Include="PrivateReflectionDynamicObject.DontBotherReadingItsNotImportant.cs" />
+    <Compile Include="PrivateReflectionDynamicObjectExtensions.DontBotherReadingItsNotImportant.cs" />
+    <Compile Include="ReadModelFacade.cs" />
+    <Compile Include="RemoveItemsFromInventory.cs" />
+    <Compile Include="RenameInventoryItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

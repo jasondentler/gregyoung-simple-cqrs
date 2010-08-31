@@ -4,12 +4,6 @@ using System.Linq;
 
 namespace SimpleCQRS
 {
-    public interface IEventStore
-    {
-        void SaveEvents(Guid aggregateId, IEnumerable<Event> events, int expectedVersion);
-        List<Event> GetEventsForAggregate(Guid aggregateId);
-    }
-
     public class EventStore : IEventStore
     {
         private readonly IEventPublisher _publisher;
@@ -67,13 +61,5 @@ namespace SimpleCQRS
             }
             return eventDescriptors.Select(desc => desc.EventData).ToList();
         }
-    }
-
-    public class AggregateNotFoundException : Exception
-    {
-    }
-
-    public class ConcurrencyException : Exception
-    {
     }
 }
