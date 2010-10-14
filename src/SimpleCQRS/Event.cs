@@ -1,9 +1,9 @@
 namespace SimpleCQRS
 {
 
-  public class Event : IMessage
-  {
-    public int Version;
-  }
+    public abstract class Event : IMessage
+    {
+        public int Version;
+    }
 
 }

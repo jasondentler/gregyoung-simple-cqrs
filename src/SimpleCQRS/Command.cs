@@ -1,8 +1,8 @@
 namespace SimpleCQRS
 {
 
-  public class Command : IMessage
-  {
-  }
+    public abstract class Command : IMessage
+    {
+    }
 
 }

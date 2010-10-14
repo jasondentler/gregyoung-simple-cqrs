@@ -1,6 +1,6 @@
 ﻿using Ninject.Modules;
 using SimpleCQRS.EventStore;
-using SimpleCQRS.EventStore.Memory;
+using SimpleCQRS.EventStore.NHibernate;
 
 namespace CQRSGui
 {
@@ -9,7 +9,7 @@ namespace CQRSGui
 
         public override void Load()
         {
-            Kernel.Bind<IEventStore>().To<MemoryEventStore>();
+            Kernel.Bind<IEventStore>().To<NHibernateEventStore>();
         }
 
     }
