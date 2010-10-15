@@ -61,14 +61,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="Domain\AggregateRoot.cs" />
     <Compile Include="DelegateAdjuster.cs" />
     <Compile Include="EventStore\Memory\MemoryEventStore.cs" />
-    <Compile Include="ICommandSender.cs" />
-    <Compile Include="IEventPublisher.cs" />
+    <Compile Include="Commanding\ICommandSender.cs" />
+    <Compile Include="Eventing\IEventPublisher.cs" />
     <Compile Include="IHandles.cs" />
     <Compile Include="PrivateReflectionDynamicObjectExtensions.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="Domain\Repository.cs" />
     <Compile Include="EventStore\AggregateNotFoundException.cs" />
     <Compile Include="EventStore\BaseEventStore.cs" />
     <Compile Include="EventStore\ConcurrencyException.cs" />
@@ -77,9 +77,9 @@
     <Compile Include="FakeBus.cs" />
     <Compile Include="PrivateReflectionDynamicObject.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="Event.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Commanding\Command.cs" />
+    <Compile Include="Eventing\Event.cs" />
+    <Compile Include="Domain\IRepository.cs" />
     <Compile Include="IMessage.cs" />
   </ItemGroup>
   <ItemGroup>

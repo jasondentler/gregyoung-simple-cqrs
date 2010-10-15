@@ -4,7 +4,9 @@ using log4net;
 using Ninject.Modules;
 using SimpleCQRS;
 using Ninject;
-using SimpleCQRS.Ninject;
+using SimpleCQRS.Commanding;
+using SimpleCQRS.Eventing;
+using SimpleCQRS.Example.CommandHandlers;
 
 namespace CQRSGui
 {
@@ -16,11 +18,11 @@ namespace CQRSGui
         public override void Load()
         {
             Kernel.Bind<ICommandSender>()
-                .To<CommandHandler>()
+                .To<NinjectCommandSender>()
                 .InSingletonScope();
 
             Kernel.Bind<IEventPublisher>()
-                .To<EventPublisher>()
+                .To<NinjectEventPublisher>()
                 .InSingletonScope();
 
             RegisterHandlers(

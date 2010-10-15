@@ -1,8 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
-using SimpleCQRS;
-using SimpleCQRS.EventStore.Memory;
 
 namespace CQRSGui
 {
@@ -31,7 +29,7 @@ namespace CQRSGui
 
             log4net.Config.XmlConfigurator.Configure();
 
-            var kernel = new StandardKernel(
+            new StandardKernel(
                 new KernelRegistrationModule(),
                 new BusModule(),
                 new EventStoreModule(),

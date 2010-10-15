@@ -13,8 +13,7 @@ namespace CQRSGui
             var sessionFactory = cfg.BuildSessionFactory();
 
             Kernel.Bind<IStatelessSession>()
-                .ToMethod(ctx => sessionFactory.OpenStatelessSession())
-                .InRequestScope();
+                .ToMethod(ctx => sessionFactory.OpenStatelessSession());
 
         }
 

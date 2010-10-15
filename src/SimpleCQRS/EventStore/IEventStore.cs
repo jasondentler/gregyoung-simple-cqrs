@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SimpleCQRS.Eventing;
 
 namespace SimpleCQRS.EventStore
 {

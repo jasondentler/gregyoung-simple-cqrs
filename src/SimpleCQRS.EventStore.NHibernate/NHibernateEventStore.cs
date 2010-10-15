@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NHibernate;
+using SimpleCQRS.Eventing;
 
 namespace SimpleCQRS.EventStore.NHibernate
 {

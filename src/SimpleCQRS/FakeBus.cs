@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using SimpleCQRS.Commanding;
+using SimpleCQRS.Eventing;
 
 namespace SimpleCQRS
 {

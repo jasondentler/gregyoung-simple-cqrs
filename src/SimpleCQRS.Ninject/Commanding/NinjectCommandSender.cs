@@ -1,12 +1,12 @@
 ﻿using Ninject;
 
-namespace SimpleCQRS.Ninject
+namespace SimpleCQRS.Commanding
 {
-    public class CommandHandler : ICommandSender
+    public class NinjectCommandSender : ICommandSender
     {
         private readonly IKernel _kernel;
         
-        public CommandHandler(IKernel kernel)
+        public NinjectCommandSender(IKernel kernel)
         {
             _kernel = kernel;
         }

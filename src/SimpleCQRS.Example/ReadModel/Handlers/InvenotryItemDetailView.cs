@@ -1,0 +1,55 @@
+﻿using System;
+using SimpleCQRS.Example.Events;
+using SimpleCQRS.Example.ReadModel.Dtos;
+
+namespace SimpleCQRS.Example.ReadModel.Handlers
+{
+    public class InvenotryItemDetailView : 
+        IHandles<InventoryItemCreated>, 
+        IHandles<InventoryItemDeactivated>, 
+        IHandles<InventoryItemRenamed>, 
+        IHandles<ItemsRemovedFromInventory>, 
+        IHandles<ItemsCheckedInToInventory>
+    {
+        public void Handle(InventoryItemCreated message)
+        {
+            MemoryReadDatabase.details.Add(message.Id, new InventoryItemDetailsDto(message.Id, message.Name, 0, 0));
+        }
+
+        public void Handle(InventoryItemRenamed message)
+        {
+            InventoryItemDetailsDto d = GetDetailsItem(message.Id);
+            d.Name = message.NewName;
+            d.Version = message.Version;
+        }
+
+        private InventoryItemDetailsDto GetDetailsItem(Guid id)
+        {
+            InventoryItemDetailsDto d;
+            if (!MemoryReadDatabase.details.TryGetValue(id, out d))
+            {
+                throw new InvalidOperationException("did not find the original inventory this shouldnt happen");
+            }
+            return d;
+        }
+
+        public void Handle(ItemsRemovedFromInventory message)
+        {
+            InventoryItemDetailsDto d = GetDetailsItem(message.Id);
+            d.CurrentCount -= message.Count;
+            d.Version = message.Version;
+        }
+
+        public void Handle(ItemsCheckedInToInventory message)
+        {
+            InventoryItemDetailsDto d = GetDetailsItem(message.Id);
+            d.CurrentCount += message.Count;
+            d.Version = message.Version;
+        }
+
+        public void Handle(InventoryItemDeactivated message)
+        {
+            MemoryReadDatabase.details.Remove(message.Id);
+        }
+    }
+}

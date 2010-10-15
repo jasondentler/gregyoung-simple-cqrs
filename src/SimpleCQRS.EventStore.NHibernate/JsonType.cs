@@ -4,6 +4,7 @@ using NHibernate;
 using NHibernate.SqlTypes;
 using NHibernate.UserTypes;
 using Newtonsoft.Json;
+using SimpleCQRS.Eventing;
 
 namespace SimpleCQRS.EventStore.NHibernate
 {

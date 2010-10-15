@@ -4,6 +4,7 @@ using NHibernate;
 using NUnit.Framework;
 using Ninject;
 using SharpTestsEx;
+using SimpleCQRS.Eventing;
 using SimpleCQRS.EventStore.NHibernate;
 
 namespace SimpleCQRS.EventStore

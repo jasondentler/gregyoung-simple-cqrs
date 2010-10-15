@@ -1,7 +1,7 @@
 ﻿namespace SimpleCQRS
 {
-  public interface IHandles<T>
-  {
-    void Handle(T message);
-  }
+    public interface IHandles<T>
+    {
+        void Handle(T message);
+    }
 }

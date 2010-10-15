@@ -1,5 +1,6 @@
 ﻿using Ninject.Modules;
 using SimpleCQRS;
+using SimpleCQRS.Domain;
 
 namespace CQRSGui
 {

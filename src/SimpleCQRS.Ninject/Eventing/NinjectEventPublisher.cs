@@ -5,18 +5,18 @@ using System.Threading;
 using log4net;
 using Ninject;
 
-namespace SimpleCQRS.Ninject
+namespace SimpleCQRS.Eventing
 {
-    public class EventPublisher : IEventPublisher
+    public class NinjectEventPublisher : IEventPublisher
     {
-        private static readonly ILog Log = LogManager.GetLogger(typeof (EventPublisher));
+        private static readonly ILog Log = LogManager.GetLogger(typeof (NinjectEventPublisher));
 
         private delegate void PublishDelegate<T>(T @event) where T : Event;
 
         private readonly IKernel _kernel;
         private readonly ConcurrentDictionary<Type, Delegate> _map;
 
-        public EventPublisher(IKernel kernel)
+        public NinjectEventPublisher(IKernel kernel)
         {
             _kernel = kernel;
             _map = new ConcurrentDictionary<Type, Delegate>();
@@ -57,7 +57,7 @@ namespace SimpleCQRS.Ninject
 
         private Delegate CreateDelegate(Type eventType)
         {
-            var mi = typeof (EventPublisher)
+            var mi = typeof (NinjectEventPublisher)
                 .GetMethod("Publish")
                 .MakeGenericMethod(eventType);
             var delegateType = typeof (PublishDelegate<>)

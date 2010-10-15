@@ -1,4 +1,5 @@
 ﻿using System;
+using SimpleCQRS.Eventing;
 
 namespace SimpleCQRS.EventStore
 {
