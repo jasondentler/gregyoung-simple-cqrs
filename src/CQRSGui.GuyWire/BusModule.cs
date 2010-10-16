@@ -8,7 +8,7 @@ using SimpleCQRS.Commanding;
 using SimpleCQRS.Eventing;
 using SimpleCQRS.Example.CommandHandlers;
 
-namespace CQRSGui
+namespace CQRSGui.GuyWire
 {
     public class BusModule : NinjectModule 
     {

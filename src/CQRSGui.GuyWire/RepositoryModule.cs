@@ -1,8 +1,7 @@
 ﻿using Ninject.Modules;
-using SimpleCQRS;
 using SimpleCQRS.Domain;
 
-namespace CQRSGui
+namespace CQRSGui.GuyWire
 {
     public class RepositoryModule : NinjectModule 
     {

@@ -1,7 +1,7 @@
 ﻿using Ninject;
 using Ninject.Modules;
 
-namespace CQRSGui
+namespace CQRSGui.GuyWire
 {
     public class KernelRegistrationModule : NinjectModule 
     {

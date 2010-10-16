@@ -2,7 +2,7 @@
 using SimpleCQRS.EventStore;
 using SimpleCQRS.EventStore.NHibernate;
 
-namespace CQRSGui
+namespace CQRSGui.GuyWire
 {
     public class EventStoreModule : NinjectModule 
     {

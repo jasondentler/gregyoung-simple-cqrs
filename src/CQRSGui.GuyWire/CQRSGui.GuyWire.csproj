@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{898FE917-0E28-4E30-943E-FB17AD869BF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CQRSGui.GuyWire</RootNamespace>
+    <AssemblyName>CQRSGui.GuyWire</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\lib\NHibernate\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\lib\Ninject\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusModule.cs" />
+    <Compile Include="EventStoreModule.cs" />
+    <Compile Include="KernelRegistrationModule.cs" />
+    <Compile Include="NinjectControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryModule.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GuyWire\GuyWire.csproj">
+      <Project>{53DB2DEE-112D-451C-B96A-29433C7AA91F}</Project>
+      <Name>GuyWire</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleCQRS.EventStore.NHibernate\SimpleCQRS.EventStore.NHibernate.csproj">
+      <Project>{D14747BA-22E2-45C8-8499-2BB64E23825E}</Project>
+      <Name>SimpleCQRS.EventStore.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleCQRS.EventStore.Tests\SimpleCQRS.EventStore.Tests.csproj">
+      <Project>{DEC3CF41-43AE-4208-800D-B078973FE1AA}</Project>
+      <Name>SimpleCQRS.EventStore.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleCQRS.Example\SimpleCQRS.Example.csproj">
+      <Project>{4BCE68BB-37F0-4B03-9A88-270EB105C93A}</Project>
+      <Name>SimpleCQRS.Example</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleCQRS.Ninject\SimpleCQRS.Ninject.csproj">
+      <Project>{04E5CB2D-B5BE-4E70-92C2-E715082D7309}</Project>
+      <Name>SimpleCQRS.Ninject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleCQRS\SimpleCQRS.csproj">
+      <Project>{DAFD2A8A-D6B0-4433-8DDF-B98460C64EC6}</Project>
+      <Name>SimpleCQRS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
