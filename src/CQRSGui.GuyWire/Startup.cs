@@ -63,5 +63,6 @@ namespace CQRSGui.GuyWire
 				kernel.Get<NinjectControllerFactory>());
 		}
 
+
 	}
 }
