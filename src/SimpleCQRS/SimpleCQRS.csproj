@@ -81,6 +81,9 @@
     <Compile Include="Eventing\Event.cs" />
     <Compile Include="Domain\IRepository.cs" />
     <Compile Include="IMessage.cs" />
+    <Compile Include="ReadModel\IDto.cs" />
+    <Compile Include="ReadModel\IHandlerHelper.cs" />
+    <Compile Include="ReadModel\IView.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -99,5 +102,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

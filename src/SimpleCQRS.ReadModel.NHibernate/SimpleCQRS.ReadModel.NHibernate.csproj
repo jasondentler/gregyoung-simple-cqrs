@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4BCE68BB-37F0-4B03-9A88-270EB105C93A}</ProjectGuid>
+    <ProjectGuid>{408E353F-9F81-4085-BF34-5542DEEEC130}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleCQRS.Example</RootNamespace>
-    <AssemblyName>SimpleCQRS.Example</AssemblyName>
+    <RootNamespace>SimpleCQRS.ReadModel.NHibernate</RootNamespace>
+    <AssemblyName>SimpleCQRS.ReadModel.NHibernate</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\lib\AutoMapper\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ConfOrm">
+      <HintPath>..\..\lib\ConfORM\ConfOrm.dll</HintPath>
+    </Reference>
+    <Reference Include="ConfOrm.Shop">
+      <HintPath>..\..\lib\ConfORM\ConfOrm.Shop.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,26 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CheckInItemsToInventory.cs" />
-    <Compile Include="CommandHandlers\InventoryCommandHandlers.cs" />
-    <Compile Include="Commands\DeactivateInventoryItem.cs" />
-    <Compile Include="Commands\CreateInventoryItem.cs" />
-    <Compile Include="Domain\InventoryItem.cs" />
-    <Compile Include="Events\InventoryItemDeactivated.cs" />
-    <Compile Include="ReadModel\Handlers\InventoryItemDetailView.cs" />
-    <Compile Include="Events\InventoryItemCreated.cs" />
-    <Compile Include="ReadModel\Dtos\InventoryItemListDto.cs" />
-    <Compile Include="Events\InventoryItemRenamed.cs" />
-    <Compile Include="ReadModel\Handlers\InventoryItemListView.cs" />
-    <Compile Include="ReadModel\IReadModelFacade.cs" />
-    <Compile Include="Events\ItemsCheckedInToInventory.cs" />
-    <Compile Include="Events\ItemsRemovedFromInventory.cs" />
-    <Compile Include="ReadModel\MemoryReadDatabase.cs" />
-    <Compile Include="ReadModel\MemoryReadModelFacade.cs" />
+    <Compile Include="Mapping.cs" />
+    <Compile Include="NHibernateHandlerHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReadModel\Dtos\InventoryItemDetailsDto.cs" />
-    <Compile Include="Commands\RemoveItemsFromInventory.cs" />
-    <Compile Include="Commands\RenameInventoryItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleCQRS\SimpleCQRS.csproj">
@@ -67,7 +67,6 @@
       <Name>SimpleCQRS</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

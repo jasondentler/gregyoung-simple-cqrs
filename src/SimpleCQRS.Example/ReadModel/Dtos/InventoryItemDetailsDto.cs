@@ -1,10 +1,11 @@
 ﻿using System;
+using SimpleCQRS.ReadModel;
 
 namespace SimpleCQRS.Example.ReadModel.Dtos
 {
-    public class InventoryItemDetailsDto
+    public class InventoryItemDetailsDto : IDto 
     {
-        public Guid Id;
+		public Guid Id { get; set; }
         public string Name;
         public int CurrentCount;
         public int Version;
@@ -16,5 +17,10 @@ namespace SimpleCQRS.Example.ReadModel.Dtos
             CurrentCount = currentCount;
             Version = version;
         }
+
+		private InventoryItemDetailsDto()
+		{
+		}
+
     }
 }
