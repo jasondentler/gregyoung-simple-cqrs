@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Reflection;
 using log4net;
 using Ninject.Modules;
@@ -53,6 +54,6 @@ namespace CQRSGui.GuyWire
                     .ToMethod(ctx => ctx.Kernel.Get(mapping1.impl));
             }
         }
-
+		
     }
 }
